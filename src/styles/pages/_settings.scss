@@ -1,0 +1,21 @@
+$primary-color: #61dafb; // bleu
+$background-color: #696c73; // gris clair
+$secondary-color: #F0F0F0;
+$black-color: #000000;
+$white-color: #ffffff;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body{
+  
+ background-color: #F0F0F0;
+}
+a {
+  text-decoration: none;
+}
+
