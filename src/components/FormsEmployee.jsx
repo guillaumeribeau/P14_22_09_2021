@@ -1,51 +1,120 @@
-import React, { Fragment } from "react";
+import React, { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import states from "../data/States";
+import department from "../data/Department";
+import Select from "react-select";
+import customStyles from "./SelectStyle";
 
 const FormsEmployee = () => {
+  const {
+    register,
+    handleSubmit,
+    formState,
+    errors,
+    setError,
+    control,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <>
       <div class="container">
         <h2>Create Employee</h2>
-        <form action="#" id="create-employee">
+        <form onSubmit={handleSubmit(onSubmit)} action="#" id="create-employee">
           <label for="first-name">First Name</label>
-          <input type="text" id="first-name" />
+          <input {...register("first-name")} type="text" id="first-name" />
 
           <label for="last-name">Last Name</label>
-          <input type="text" id="last-name" />
+          <input {...register("last-name")} type="text" id="last-name" />
 
-          <label for="date-of-birth">Date of Birth</label>
-          <input id="date-of-birth" type="text" />
+          <div className="container-picker">
+            <label for="birthDate">Date of Birth</label>
 
-          <label for="start-date">Start Date</label>
-          <input id="start-date" type="text" />
+            <Controller
+              name="birthDate"
+              defaultValue={null}
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <DatePicker
+                  placeholderText="Select BirthDay"
+                  selected={value}
+                  onChange={onChange}
+                />
+              )}
+            />
+          </div>
+          <div className="container-picker">
+            <label for="startDate">Start Date</label>
+
+            <Controller
+              name="startDate"
+              defaultValue={null}
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <DatePicker
+                  placeholderText="Select Start Date"
+                  selected={value}
+                  onChange={onChange}
+                />
+              )}
+            />
+          </div>
 
           <fieldset class="address">
             <legend>Address</legend>
 
             <label for="street">Street</label>
-            <input id="street" type="text" />
+            <input {...register("street")} id="street" type="text" />
 
             <label for="city">City</label>
-            <input id="city" type="text" />
+            <input {...register("city")} id="city" type="text" />
 
-            <label for="state">State</label>
-            <select name="state" id="state"></select>
+            <label for="city">States</label>
+            <Controller
+              control={control}
+              name="states"
+              render={({ field: { onChange, value, ref } }) => (
+                <Select
+                  defaultValue={states[0]}
+                  inputRef={ref}
+                  styles={customStyles}
+                  options={states}
+                  value={states.find(
+                    (c) => c.abbreviation === states.abbreviation
+                  )}
+                  onChange={(val) => onChange(val.abbreviation)}
+                />
+              )}
+            />
 
             <label for="zip-code">Zip Code</label>
-            <input id="zip-code" type="number" />
+            <input {...register("zip-code")} id="zip-code" type="number" />
           </fieldset>
 
           <label for="department">Department</label>
-          <select name="department" id="department">
-            <option>Sales</option>
-            <option>Marketing</option>
-            <option>Engineering</option>
-            <option>Human Resources</option>
-            <option>Legal</option>
-          </select>
-          <button onclick="saveEmployee()">Save</button>
+          <Controller
+            control={control}
+            name="departement"
+            render={({ field: { onChange, value, ref } }) => (
+              <Select
+                defaultValue={department[0]}
+                inputRef={ref}
+                styles={customStyles}
+                options={department}
+                value={department.find((c) => c.value === value)}
+                onChange={(val) => onChange(val.value)}
+              />
+            )}
+          />
+
+          <button>Save</button>
         </form>
       </div>
-     
     </>
   );
 };

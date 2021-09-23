@@ -58,7 +58,7 @@ fieldset {
   color: $primary-color;
 }
 
-select {
+ select {
   background-color: $secondary-color;
   width: 200px;
   height: 35px;
@@ -66,3 +66,14 @@ select {
   border: 2px solid #ccc;
   border-radius: 5px;
 }
+
+.container-picker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  label {
+    text-align: center;
+  }
+}
+
