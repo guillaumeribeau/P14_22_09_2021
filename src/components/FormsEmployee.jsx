@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -6,6 +6,7 @@ import states from "../data/States";
 import department from "../data/Department";
 import Select from "react-select";
 import customStyles from "./SelectStyle";
+import firebase from "../utils/firebaseConfig";
 
 const FormsEmployee = () => {
   const {
@@ -17,20 +18,43 @@ const FormsEmployee = () => {
     control,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const createEmployee = (inputData) => {
+    const employeeDB = firebase.database().ref("create-employee");
+
+    const employee = {
+      birthDate: inputData.birthDate.getFullYear(),
+      city: inputData.city,
+      department: inputData.department,
+      firstName: inputData.firstName,
+      lastName: inputData.lastName,
+      startDate: inputData.startDate.getDate(),
+      states: inputData.states,
+      street: inputData.street,
+      zipCode: inputData.zipCode,
+    };
+    employeeDB.push(employee);
   };
+
+
+
+  const onSubmit = (data) => {
+    console.log(data)
+   createEmployee(data)
+ 
+  }
+  
+
 
   return (
     <>
       <div class="container">
         <h2>Create Employee</h2>
         <form onSubmit={handleSubmit(onSubmit)} action="#" id="create-employee">
-          <label for="first-name">First Name</label>
-          <input {...register("first-name")} type="text" id="first-name" />
+          <label for="firstName">First Name</label>
+          <input {...register("firstName")} type="text" id="firstName" />
 
-          <label for="last-name">Last Name</label>
-          <input {...register("last-name")} type="text" id="last-name" />
+          <label for="lastName">Last Name</label>
+          <input {...register("lastName")} type="text" id="lastName" />
 
           <div className="container-picker">
             <label for="birthDate">Date of Birth</label>
@@ -74,7 +98,7 @@ const FormsEmployee = () => {
             <label for="city">City</label>
             <input {...register("city")} id="city" type="text" />
 
-            <label for="city">States</label>
+            <label for="states">States</label>
             <Controller
               control={control}
               name="states"
@@ -92,14 +116,14 @@ const FormsEmployee = () => {
               )}
             />
 
-            <label for="zip-code">Zip Code</label>
-            <input {...register("zip-code")} id="zip-code" type="number" />
+            <label for="zipCode">Zip Code</label>
+            <input {...register("zipCode")} id="zip-code" type="number" />
           </fieldset>
 
           <label for="department">Department</label>
           <Controller
             control={control}
-            name="departement"
+            name="department"
             render={({ field: { onChange, value, ref } }) => (
               <Select
                 defaultValue={department[0]}
