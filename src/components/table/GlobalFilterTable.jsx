@@ -21,6 +21,7 @@ function GlobalFilter({
 
   return (
     <input
+    className='input_search'
       value={value || ""}
       onChange={e => {
         setValue(e.target.value);

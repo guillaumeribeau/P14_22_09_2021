@@ -1,11 +1,11 @@
 table {
-    margin-top: 50px;
+  margin-top: 50px;
   border-spacing: 0;
   border: 1px solid $white-color;
- 
+
   th,
   td {
-    color:$white-color;
+    color: $white-color;
     margin: 0;
     padding: 0.5rem;
     border-bottom: 1px solid $white-color;
@@ -15,9 +15,10 @@ table {
       border-right: 0;
     }
   }
-  input{
-      height: 35px;
-      border-radius: 10px;
-      color: $white-color;
+  input {
+    height: 35px;
+    border-radius: 10px;
+    padding-left: 5px;
+    color: $black-color;
   }
 }
