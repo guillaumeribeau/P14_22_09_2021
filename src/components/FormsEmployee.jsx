@@ -48,8 +48,10 @@ const FormsEmployee = () => {
   return (
     <>
       <div class="container">
-        <h2>Create Employee</h2>
-        <form onSubmit={handleSubmit(onSubmit)} action="#" id="create-employee">
+  
+     <form onSubmit={handleSubmit(onSubmit)} action="#" id="create-employee">
+       <div className="container_form">
+        <div className="left_form_container">
           <label for="firstName">First Name</label>
           <input {...register("firstName")} type="text" id="firstName" />
 
@@ -88,7 +90,9 @@ const FormsEmployee = () => {
               )}
             />
           </div>
-
+         
+          </div>
+          <div className="right_form_container">
           <fieldset class="address">
             <legend>Address</legend>
 
@@ -136,7 +140,11 @@ const FormsEmployee = () => {
             )}
           />
 
-          <button>Save</button>
+        
+          
+          </div>
+           </div>
+           <button>Save Employee</button>
         </form>
       </div>
     </>

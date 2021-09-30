@@ -1,14 +1,27 @@
-import React from 'react';
-import Header from '../components/Header';
-import Forms from '../components/FormsEmployee.jsx';
+import Header from "../components/Header";
+import Forms from "../components/FormsEmployee.jsx";
+import BackGroundAnimation from "../components/BackGroundAnimation";
 
 const Home = () => {
-    return (
-        <div className='container_home'>
-          <Header/>
-          <Forms/>
-        </div>
-    );
+
+
+
+
+
+
+
+
+
+
+
+  
+  return (
+    <div className="container_home">
+     {/* // <BackGroundAnimation /> */}
+      <Header />
+      <Forms />
+    </div>
+  );
 };
 
 export default Home;

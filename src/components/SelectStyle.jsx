@@ -9,9 +9,10 @@ const customStyles = {
 
   control: (styles) => ({
     ...styles,
-    backgroundColor: "white",
+    backgroundColor: "#00B2D0",
     width: "200px",
     height: "45px",
+    color:"white",
   }),
 };
 

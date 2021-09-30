@@ -6,7 +6,7 @@ import firebase from "../utils/firebaseConfig";
 
 const EmployeeList = () => {
   return (
-    <div>
+    <div className='container_employee-list'>
       <Header />
       <TableEmployee />
     </div>
