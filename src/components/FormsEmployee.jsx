@@ -8,6 +8,7 @@ import Select from "react-select";
 import customStyles from "./SelectStyle";
 import firebase from "../utils/firebaseConfig";
 import gsap from "gsap";
+import employee from "../assets/images/employee.png"
 
 const FormsEmployee = () => {
   const {
@@ -115,7 +116,9 @@ const FormsEmployee = () => {
                   )}
                 />
               </div>
+             <img src={employee}/>
             </div>
+     
             <div className="right_form_container" ref={rightforms}>
               <fieldset class="address">
                 <legend>Address</legend>

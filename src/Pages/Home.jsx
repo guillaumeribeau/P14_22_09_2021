@@ -11,9 +11,7 @@ const Home = () => {
   <h1 className='title'>Create a New Employee</h1>
   <img className="logo" src={logo} alt="logo de Kasa" />
     <div className="container_home">
-       
-      {/* // <BackGroundAnimation /> */}
-      <Header />
+       <Header />
       <div className="forms_container_img">
         <Forms />
         <img src={working} alt="working group" />
