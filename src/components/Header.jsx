@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/images/logo2.png";
 import home from "../assets/images/home.svg";
+import working from '../assets/images/working.png'
 import employee from "../assets/images/group.svg";
 import { gsap } from "gsap";
 
@@ -32,7 +32,7 @@ const Header = () => {
             Home
           </NavLink>
         </div>
-        <img ref={LogoAnim} className="logo" src={logo} alt="logo de Kasa" />
+       
         <div ref={Employee} className="container_img">
           <img src={employee} alt="home page" />
           <NavLink to="/employee" exact activeClassName="nav-active">

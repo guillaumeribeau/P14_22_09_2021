@@ -44,7 +44,7 @@ const FormsEmployee = () => {
 
   const leftforms = useRef(null);
   const rightforms = useRef(null);
-  const button= useRef(null)
+  const button = useRef(null);
 
   useEffect(() => {
     gsap.from(leftforms.current, {
@@ -64,8 +64,6 @@ const FormsEmployee = () => {
       duration: 1,
     });
   }, []);
-
-
 
   return (
     <>
@@ -87,7 +85,14 @@ const FormsEmployee = () => {
                   defaultValue={null}
                   control={control}
                   render={({ field: { onChange, value } }) => (
-                    <DatePicker selected={value} onChange={onChange} />
+                    <DatePicker
+                      selected={value}
+                      onChange={onChange}
+                      showYearDropdown
+                      peekNextMonth
+                      showMonthDropdown
+                      dropdownMode="select"
+                    />
                   )}
                 />
               </div>
@@ -99,7 +104,14 @@ const FormsEmployee = () => {
                   defaultValue={null}
                   control={control}
                   render={({ field: { onChange, value } }) => (
-                    <DatePicker selected={value} onChange={onChange} />
+                    <DatePicker
+                      selected={value}
+                      onChange={onChange}
+                      showYearDropdown
+                      peekNextMonth
+                      showMonthDropdown
+                      dropdownMode="select"
+                    />
                   )}
                 />
               </div>

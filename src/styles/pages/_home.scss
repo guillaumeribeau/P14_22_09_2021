@@ -1,11 +1,29 @@
- .container_home {
+.container_home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.forms_container_img {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-right: 2%;
+
+  img {
+    position: absolute;
+    right: -250px;
+    top: -215px;
+  }
+}
 
 
-
-
+.logo{
+  position: absolute;
+  left:20px;
+  top:20px;
+  margin-top: -150px;
+  margin-left: -100px;
+}

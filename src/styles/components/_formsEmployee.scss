@@ -17,11 +17,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 300px;
+  height: 500px;
+  margin-top: 50px;
   background-color: $background-color;
   margin-right: 100px;
   padding-bottom: 15px;
   border-radius: 10px;
+  border-radius: 20px 0px 20px 0px;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    box-shadow: $box-shadow-hover;
+  }
 }
 
 .right_form_container {
@@ -30,23 +39,27 @@
   align-items: center;
   margin-top: 50px;
   width: 300px;
+  height: 500px;
   background-color: $background-color;
-  border-radius: 10px;
+  border-radius: 0px 20px 0px 20px;
   padding-bottom: 15px;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    box-shadow: $box-shadow-hover;
+  }
 }
 
 form {
- 
   width: 900px;
   height: 700px;
   margin-top: 20px;
-  background: url(../../assets/images/formbg2.jpg) no-repeat 50% 50%;
   background-size: cover;
   border-radius: 10px;
   margin-bottom: 50px;
 
   input {
-    background-color: $tiercary-color;
+    background-color: $input-color;
     width: 200px;
     height: 35px;
     padding: 5px;
@@ -55,28 +68,28 @@ form {
   }
 
   label {
-    color: $white-color;
+    color: $black-color;
     padding-bottom: 10px;
     padding-top: 15px;
   }
 
   button {
     transform: translateX(350px);
-    background-color: $primary-color;
-    color:$white-color;
+    background: rgb(242, 186, 82);
+    color: $white-color;
     font-family: Monserrat;
     font-size: 22px;
     font-weight: 700;
-    margin-top: 15px;
-    margin-bottom: 20px;
     width: 200px;
     height: 45px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 50px;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+    box-shadow: $box-shadow;
+
     &:hover {
-      box-shadow: 0px 10px 13px -7px #000000;
+      box-shadow: $box-shadow-hover;
     }
   }
 }
@@ -87,11 +100,11 @@ fieldset {
   justify-content: center;
   align-items: center;
   margin-top: 25px;
-  color: $tiercary-color;
+  color: $black-color;
 }
 
 select {
-  background-color: $tiercary-color;
+  background-color: $input-color;
   width: 200px;
   height: 35px;
   padding: 5px;
