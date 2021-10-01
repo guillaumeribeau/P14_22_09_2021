@@ -8,6 +8,7 @@ const Home = () => {
   return (
   
   <>
+  <h1 className='title'>Create a New Employee</h1>
   <img className="logo" src={logo} alt="logo de Kasa" />
     <div className="container_home">
        

@@ -1,92 +1,61 @@
-.header_nav {
-   display: flex;
-   flex-direction: column;
-  align-items: center;
-   justify-content: flex-start;
-   position: absolute;
-  // left:25px;
-   top:80px;
- 
-  font-size: 24px;
-
 
   a {
-    position: relative;
+    text-align: center;
     font-family: Montserrat;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
     line-height: 34px;
     letter-spacing: 0em;
-    margin-right: 45px;
     padding-bottom: 10px;
-    color: $white-color;
+    color: $black-color;
     text-decoration: none;
   }
-  .nav-active {
-    &::after {
-      content: "";
-      position: absolute;
-      background: $primary-color;
-      height: 3px;
-      width: 100%;
-      bottom: 1px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-}
 
-.container_img {
+
+
+
+.header_nav {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-
-  img {
-    width: 44px;
-    height: 44px;
-    padding-right: 15px;
-  
-  
+  position: absolute;
+  width: 220px;
+  height: 200px;
+  background-color: $white-color;
+  border-radius: 30px;
+  right:25px;
+  top: 80px;
+  font-size: 18px;
+  padding-left: 10px;
+  box-shadow: $box-shadow;
+  &:hover{
+    box-shadow: $box-shadow-hover;
   }
+
+  img{
+width: 60px;
+height: 60px;
+
+  }
+}
+
+.wrapper_hamburger{
+position: absolute;
+right: 55px;
+top:35px;
+
+
+
+
 }
 
 
 
-// @media screen and (max-width: 768px) {
-//   .logo {
-//     height: 47px;
-//     width: 145px;
-//     margin-left: 20px;
-//   }
-//   .header_nav {
-//     margin-right: 0px;
-//     a {
-//       font-size: 12px;
-//       margin-right: 20px;
-//     }
-//   }
 
-//   .container_header_image {
-//     position: relative;
-//     margin: 25px 0px 0px 20px;
 
-//     img {
-//       object-fit: cover;
-//       width: 100%;
-//       height: 111px;
-//       border-radius: 25px;
-//       margin-right: 0px;
-//     }
-//   }
 
-//   .text_image_header {
-//     text-align: left;
-//     padding-left: 20px;
-//     top: 23%;
-//     height: 223px;
-//     margin-left: 20px;
-//     font-size: 24px;
-//     line-height: 45px;
-//   }
-// }
+
+
+
