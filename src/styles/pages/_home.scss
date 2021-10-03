@@ -13,7 +13,7 @@
   margin-right: 2%;
   margin-top: 250px;
 
-  img {
+  .working_img {
     position: absolute;
     right: -220px;
     top: -230px;
@@ -39,10 +39,13 @@ color: $white-color;
 }
 
 
+
+
+
 @media (max-width: 1024px) {
 .forms_container_img{
   margin-top: 300px;
-img{
+.working_img{
 right:-100px;
 top:-250px;
 margin-right: 25px;
@@ -56,4 +59,3 @@ margin-right: 25px;
 
 
 
-// }

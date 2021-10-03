@@ -9,6 +9,8 @@ import customStyles from "./SelectStyle";
 import firebase from "../utils/firebaseConfig";
 import gsap from "gsap";
 import employee from "../assets/images/employee.png"
+import document from "../assets/images/document.png"
+
 
 const FormsEmployee = () => {
   const {
@@ -42,12 +44,13 @@ const FormsEmployee = () => {
   };
 
   // animation forms
-
   const leftforms = useRef(null);
   const rightforms = useRef(null);
   const button = useRef(null);
-
+  const documentImg = useRef(null);
+ 
   useEffect(() => {
+
     gsap.from(leftforms.current, {
       x: "-250%",
       delay: 1,
@@ -64,7 +67,21 @@ const FormsEmployee = () => {
       delay: 1,
       duration: 1,
     });
-  }, []);
+     gsap.to(documentImg.current, {
+       delay:3,
+      y:"500px",
+      duration:3,
+      })
+      gsap.to(documentImg.current, {
+        delay:6,
+        x:"-520px",
+        duration:3,
+        opacity:0,
+        })
+
+  
+      },[]);
+ 
 
   return (
     <>
@@ -165,6 +182,7 @@ const FormsEmployee = () => {
                 )}
               />
             </div>
+            <img className="document_icons" ref={documentImg} src={document} alt="document icons" />
           </div>
           <button ref={button}>Save Employee</button>
         </form>
