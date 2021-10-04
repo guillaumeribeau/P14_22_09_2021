@@ -1,4 +1,9 @@
 import GlobalFilter from "./GlobalFilterTable";
+
+
+
+
+
 const TableLayout = ({
   getTableProps,
   getTableBodyProps,
@@ -8,9 +13,19 @@ const TableLayout = ({
   state: { globalFilter },
   visibleColumns,
   preGlobalFilteredRows,
-  setGlobalFilter
+  setGlobalFilter,
+  pageOptions,
+  page,
+     state: { pageIndex, pageSize },
+     gotoPage,
+     previousPage,
+     nextPage,
+     setPageSize,
+     canPreviousPage,
+     canNextPage,
 }) => {
   return (
+    <>
     <table {...getTableProps()}>
       <thead>
         <tr>
@@ -42,7 +57,7 @@ const TableLayout = ({
         ))}
       </thead>
       <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
+        {page.map((row, i) => {
           prepareRow(row)
           return (
             <tr {...row.getRowProps()}>
@@ -53,7 +68,44 @@ const TableLayout = ({
           )
         })}
       </tbody>
-    </table>
+    </table>   
+     <div>
+       
+    <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+        Previous Page
+      </button>
+       <button onClick={() => nextPage()} disabled={!canNextPage}>
+         Next Page
+      </button>
+       <div>
+        Page{' '}         <em>
+           {pageIndex + 1} of {pageOptions.length}
+         </em>
+       </div>
+       <div>Go to page:</div>
+       <input
+         type="number"
+         defaultValue={pageIndex + 1 || 1}
+         onChange={e => {
+           const page = e.target.value ? Number(e.target.value) - 1 : 0
+           gotoPage(page)
+         }}
+       />
+       <select
+         value={pageSize}
+         onChange={e => {
+           setPageSize(Number(e.target.value))
+         }}
+       >
+         {[5, 10, 20, 30, 40].map(pageSize => (
+           <option key={pageSize} value={pageSize}>
+             Show {pageSize}
+           </option>
+         ))}
+       </select>
+     </div>
+     </>
+
   );
 }
 

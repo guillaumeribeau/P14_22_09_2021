@@ -1,22 +1,20 @@
 import Header from "../components/Header";
 import Forms from "../components/FormsEmployee.jsx";
 import working from "../assets/images/working.png";
-import BackGroundAnimation from "../components/BackGroundAnimation";
-
+import teamWork from "../assets/images/teamwork.png";
 import logo from "../assets/images/logo2.png";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-
 const Home = () => {
-
   return (
     <>
       <h1 className="title">Create a New Employee</h1>
-      <img className="logo" src={logo} alt="logo de Kasa" />
+      <a href="/">
+        {" "}
+        <img className="logo" src={logo} alt="logo de Hrnet" />
+      </a>
 
       <div className="container_home">
-        <Header />
+        <Header title="Current Employee" href="/employee" image={teamWork} />
         <div className="forms_container_img">
           <Forms />
           <img className="working_img" src={working} alt="working group" />

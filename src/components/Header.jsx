@@ -5,9 +5,9 @@ import working from "../assets/images/working.png";
 import employee from "../assets/images/group.svg";
 import { gsap } from "gsap";
 import Hamburger from "hamburger-react";
-import teamWork from "../assets/images/teamwork.png";
 
-const Header = () => {
+
+const Header = ({title,image,href}) => {
   const menu = useRef(null);
   const Employee = useRef(null);
   const LogoAnim = useRef(null);
@@ -38,10 +38,10 @@ const Header = () => {
         />
       </div>
 
-      <a  href="/employee">
+      <a  href={href}>
         <nav ref={menu} className="header_nav">
-          Current Employee
-          <img src={teamWork} alt="team worker icons" />
+          {title} 
+          <img src={image} alt="team worker icons" />
         </nav>
       </a>
     </>

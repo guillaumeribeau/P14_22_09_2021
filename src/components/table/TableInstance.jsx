@@ -1,5 +1,10 @@
 import React, { useMemo } from "react";
-import { useGlobalFilter, useSortBy, useTable } from "react-table";
+import {
+  useGlobalFilter,
+  useSortBy,
+  useTable,
+  usePagination,
+} from "react-table";
 import TableLayout from "./TableLayout";
 
 export const TableInstance = ({ tableData }) => {
@@ -45,8 +50,12 @@ export const TableInstance = ({ tableData }) => {
     return [columns, tableData];
   }, [tableData]);
 
-  const tableinstance = useTable({ columns, data },
-    useGlobalFilter, useSortBy);
+  const tableinstance = useTable(
+    { columns, data, initialState: { pageIndex: 1, pageSize:5 } },
+    useGlobalFilter,
+    useSortBy,
+    usePagination
+  );
 
   return <TableLayout {...tableinstance} />;
 };

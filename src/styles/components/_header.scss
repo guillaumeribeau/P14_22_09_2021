@@ -27,6 +27,7 @@ a {
   padding-left: 10px;
   box-shadow: $box-shadow;
   opacity: 0;
+  z-index:9999;
   &:hover {
     box-shadow: $box-shadow-hover;
   }

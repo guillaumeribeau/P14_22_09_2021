@@ -12,6 +12,7 @@ import gsap from "gsap";
 import employee from "../assets/images/employee.png";
 import document from "../assets/images/document.png";
 
+
 const FormsEmployee = () => {
   const {
     register,
