@@ -34,8 +34,8 @@ export const TableInstance = ({ tableData }) => {
         accessor: "city",
       },
       {
-        Header: "State",
-        accessor: "state",
+        Header: "States",
+        accessor: "states",
       },
       {
         Header: "Zip Code",
