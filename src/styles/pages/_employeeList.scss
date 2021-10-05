@@ -12,5 +12,57 @@
   }
   
   
+  .container_pagination{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 20px;
+padding-bottom: 250px;
+
+
+  }
+
+  .change_pagination{
+ margin-right: 255px;
+ color:$white-color;
+
+
+  }
   
+  .container_button_pagination{
+    display: flex;
+    align-items: center;
+
+  }
+  .button_pagination{
+  width: 125px;
+  height: 25px;
+  background-color: $white-color;
+  color: $black-color;
+ cursor: pointer;
+margin-right: 10px;
+
+
+  }
   
+  .container_input_pagination{
+    display: flex;
+    align-items: center;
+    color:$white-color;
+ select{
+   margin-left:15px;
+ }
+
+  }
+
+  .input_pagination{
+    background-color: $input-color;
+    margin-left:15px;
+    width: 200px;
+    height: 35px;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+
+
+  }

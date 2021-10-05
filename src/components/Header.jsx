@@ -14,7 +14,7 @@ const Header = ({title,image,href}) => {
 
   const animationNav = () => {
     if (!isOpen) {
-      gsap.to(menu.current, { opacity: 1, duration: 1.2,x:0});
+      gsap.to(menu.current, { opacity: 1, duration: 1.2,x:-245});
     }
 
     if (isOpen) {

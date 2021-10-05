@@ -69,21 +69,24 @@ const TableLayout = ({
         })}
       </tbody>
     </table>   
-     <div>
-       
-    <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+     <div className='container_pagination'>
+      <div className="container_button_pagination"> 
+    <button className='button_pagination' onClick={() => previousPage()} disabled={!canPreviousPage}>
         Previous Page
       </button>
-       <button onClick={() => nextPage()} disabled={!canNextPage}>
+       <button className='button_pagination' onClick={() => nextPage()} disabled={!canNextPage}>
          Next Page
       </button>
-       <div>
+       <div className='change_pagination'>
         Page{' '}         <em>
            {pageIndex + 1} of {pageOptions.length}
          </em>
        </div>
-       <div>Go to page:</div>
+       </div>  
+       <div className="container_input_pagination">
+       <div >Go to page:</div>
        <input
+       className='input_pagination'
          type="number"
          defaultValue={pageIndex + 1 || 1}
          onChange={e => {
@@ -103,6 +106,7 @@ const TableLayout = ({
            </option>
          ))}
        </select>
+       </div>
      </div>
      </>
 
