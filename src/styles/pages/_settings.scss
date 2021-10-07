@@ -1,26 +1,5 @@
 
 
-
-$primary-color: #024199;
-$background-color: #FFFF;
-
-
-//forms
-
-$input-color: #F2BA52;
-
-
-// black et white 
-$black-color: #343959;
-$white-color:#FCFCFC;
-
-
-$box-shadow: -2px 4px 11px 2px rgba(0,0,0,0.82);
-$box-shadow-hover: -8px 4px 14px 15px rgba(0,0,0,0.54);
-
-
-
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -29,14 +8,19 @@ $box-shadow-hover: -8px 4px 14px 15px rgba(0,0,0,0.54);
   font-family: "Montserrat", sans-serif;
 }
 
-body {
 
-  height: 100%;
-  background: url(../../assets/images/shiny_overlay.svg) no-repeat 50% 50%;
-  background-size: cover;
-  overflow-x: hidden;
-  padding:2%;
-}
-a {
-  text-decoration: none;
-}
+// colors 
+$primary-color: #024199;
+$background-color: #FFFF;
+$input-color: #F2BA52;
+$black-color: #343959;
+$white-color:#FCFCFC;
+
+// box shadow
+$box-shadow: -2px 4px 11px 2px rgba(0,0,0,0.82);
+$box-shadow-hover: -8px 4px 14px 15px rgba(0,0,0,0.54);
+
+
+
+
+
