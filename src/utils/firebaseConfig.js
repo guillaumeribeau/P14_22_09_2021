@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-
+import "firebase/auth";
 
 
 const firebaseConfig = {
@@ -11,7 +11,6 @@ const firebaseConfig = {
     appId: "1:698849197325:web:34e6b419f5955684280444",
     databaseURL: "https://argent-bank-p14-openclassrooms-default-rtdb.europe-west1.firebasedatabase.app/"
   };
-
 
 
 // initialize Firebase

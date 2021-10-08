@@ -44,3 +44,24 @@ a {
   top: 35px;
   margin-bottom: 10px;
 }
+
+.signout-btn{
+  background: rgb(242, 186, 82);
+  color: $white-color;
+  font-family: Monserrat;
+  font-size: 22px;
+  font-weight: 700;
+  width: 150px;
+  height: 45px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  border-color: $input-color;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    box-shadow: $box-shadow-hover;
+  }
+}
+
+

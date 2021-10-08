@@ -86,7 +86,6 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-   
     transform: translateX(250px);
     background: rgb(242, 186, 82);
     color: $white-color;
@@ -101,9 +100,7 @@ form {
     border-color: $input-color;
     box-shadow: $box-shadow;
 
-    &:hover {
-      box-shadow: $box-shadow-hover;
-    }
+  
   }
 }
 

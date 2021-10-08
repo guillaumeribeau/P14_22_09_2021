@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
-import home from "../assets/images/home.svg";
-import working from "../assets/images/working.png";
-import employee from "../assets/images/group.svg";
 import { gsap } from "gsap";
 import Hamburger from "hamburger-react";
-
+import firebase from 'firebase';
+import { useHistory } from "react-router-dom";
 
 const Header = ({title,image,href}) => {
   const menu = useRef(null);
@@ -24,8 +21,18 @@ const Header = ({title,image,href}) => {
 
   const [isOpen, setOpen] = useState(false);
 
+let history = useHistory()
+  const returnToLoginPage= ()=>{
+  firebase.auth().signOut();
+  history.push({
+    pathname: "/login",
+  });
+  }
+
   return (
     <>
+   <button className='signout-btn' onClick={returnToLoginPage}>Sign Out</button>
+
       <div onClick={animationNav} className="wrapper_hamburger">
         <Hamburger
           rounded
