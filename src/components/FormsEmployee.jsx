@@ -272,6 +272,8 @@ const FormsEmployee = () => {
     modalContent=" A new Employee is created !"
     styleButton = {customButton}
     styleContent = {customContent}
+    outside={true}
+    escape={false}
 />
       </div>
     </>
