@@ -27,7 +27,7 @@ a {
   padding-left: 10px;
   box-shadow: $box-shadow;
   opacity: 0;
-  z-index:9999;
+  z-index: 9999;
   &:hover {
     box-shadow: $box-shadow-hover;
   }
@@ -45,9 +45,7 @@ a {
   margin-bottom: 10px;
 }
 
-.signout-btn{
-  background: rgb(242, 186, 82);
-  color: $white-color;
+.signout-btn {
   font-family: Monserrat;
   font-size: 22px;
   font-weight: 700;
@@ -56,12 +54,5 @@ a {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
-  border-color: $input-color;
   box-shadow: $box-shadow;
-
-  &:hover {
-    box-shadow: $box-shadow-hover;
-  }
 }
-
-
