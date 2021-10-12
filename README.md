@@ -14,7 +14,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### For run application you need to have a login:
+### For run application you need a login:
 
 ![Login](./src/assets/images/login.png)
 
@@ -25,7 +25,7 @@ Username | Password
 admin@hrnet.com | admin72
 
 
-## We can access directly here:
+## We can access demo live directly here:
 
 https://argent-bank-p14-openclassrooms.web.app/login
 
