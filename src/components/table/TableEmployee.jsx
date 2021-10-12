@@ -23,4 +23,3 @@ const TableEmployee = () => {
   return <TableInstance tableData={data} />;
 };
 export default TableEmployee;
-

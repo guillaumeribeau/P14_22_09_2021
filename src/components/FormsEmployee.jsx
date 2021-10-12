@@ -12,10 +12,9 @@ import firebase from "../utils/firebaseConfig";
 import gsap from "gsap";
 import employee from "../assets/images/employee.png";
 import document from "../assets/images/document.png";
-import {customButton, customContent} from './modale/CustomModal'
+import { customButton, customContent } from "./modale/CustomModal";
 
 const FormsEmployee = () => {
-
   // état de la modale
   const [active, setActive] = useState(false);
 
@@ -51,7 +50,7 @@ const FormsEmployee = () => {
   const onSubmit = (data) => {
     console.log(data);
     createEmployee(data);
-    setActive(true) // modale s'affiche
+    setActive(true); // modale s'affiche
   };
 
   // animation forms
@@ -261,20 +260,21 @@ const FormsEmployee = () => {
               alt="document icons"
             />
           </div>
-          <button  ref={button}>
+          <button className="save_employee_btn" ref={button}>
             Save Employee
           </button>
         </form>
+
         <Modal
-    close = {close}
-    open = {active}
-    showClose = {true}
-    modalContent=" A new Employee is created !"
-    styleButton = {customButton}
-    styleContent = {customContent}
-    outside={true}
-    escape={false}
-/>
+          close={close}
+          open={active}
+          showClose={true}
+          modalContent=" A new Employee is created !"
+          styleButton={customButton}
+          styleContent={customContent}
+          outside={true}
+          escape={false}
+        />
       </div>
     </>
   );

@@ -5,10 +5,8 @@
   flex-direction: column;
   margin-top: 20px;
   margin-bottom: 300px;
-  .logo-login{
-margin-top: -150px;
-
-     
+  .logo-login {
+    margin-top: -150px;
   }
 }
 
@@ -24,7 +22,6 @@ margin-top: -150px;
   border-radius: 0px 20px 0px 20px;
   padding-bottom: 25px;
   box-shadow: $box-shadow;
-  
 
   &:hover {
     box-shadow: $box-shadow-hover;
@@ -53,8 +50,8 @@ margin-top: -150px;
     padding-top: 15px;
   }
 
-  button{
-  transform: translateX(0px);
+  button {
+    transform: translateX(0px);
     background: rgb(242, 186, 82);
     color: $white-color;
     font-family: Monserrat;
@@ -67,17 +64,12 @@ margin-top: -150px;
     margin-top: 60px;
     border-color: $input-color;
     box-shadow: $box-shadow;
-   
   }
 }
 
-.input-login-group{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-self:center;
-
+.input-login-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
 }
-
-
-

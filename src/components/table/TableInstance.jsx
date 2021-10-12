@@ -51,7 +51,7 @@ export const TableInstance = ({ tableData }) => {
   }, [tableData]);
 
   const tableinstance = useTable(
-    { columns, data, initialState: { pageIndex: 1, pageSize:5 } },
+    { columns, data, initialState: { pageIndex: 1, pageSize: 5 } },
     useGlobalFilter,
     useSortBy,
     usePagination

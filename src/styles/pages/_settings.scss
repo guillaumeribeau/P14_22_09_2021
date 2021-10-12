@@ -1,5 +1,3 @@
-
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8,19 +6,13 @@
   font-family: "Montserrat", sans-serif;
 }
 
-
-// colors 
+// colors
 $primary-color: #024199;
-$background-color: #FFFF;
-$input-color: #F2BA52;
+$background-color: #ffff;
+$input-color: #f2ba52;
 $black-color: #343959;
-$white-color:#FCFCFC;
+$white-color: #fcfcfc;
 
 // box shadow
-$box-shadow: -2px 4px 11px 2px rgba(0,0,0,0.82);
-$box-shadow-hover: -8px 4px 14px 15px rgba(0,0,0,0.54);
-
-
-
-
-
+$box-shadow: -2px 4px 11px 2px rgba(0, 0, 0, 0.82);
+$box-shadow-hover: -8px 4px 14px 15px rgba(0, 0, 0, 0.54);

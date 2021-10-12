@@ -1,38 +1,34 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Hamburger from "hamburger-react";
-import firebase from 'firebase';
+import firebase from "firebase";
 import { useHistory } from "react-router-dom";
 
-const Header = ({title,image,href}) => {
+const Navigation = ({ title, image, href }) => {
   const menu = useRef(null);
-  const Employee = useRef(null);
-  const LogoAnim = useRef(null);
 
   const animationNav = () => {
     if (!isOpen) {
-      gsap.to(menu.current, { opacity: 1, duration: 1.2,x:-245});
+      gsap.to(menu.current, { opacity: 1, duration: 1.2, x: -245 });
     }
 
     if (isOpen) {
-      gsap.to(menu.current, { opacity: 0, duration: 1.2,x:200 });
+      gsap.to(menu.current, { opacity: 0, duration: 1.2, x: 200 });
     }
   };
 
   const [isOpen, setOpen] = useState(false);
 
-let history = useHistory()
-  const returnToLoginPage= ()=>{
-  firebase.auth().signOut();
-  history.push({
-    pathname: "/login",
-  });
-  }
+  let history = useHistory();
+  const returnToLoginPage = () => {
+    firebase.auth().signOut();
+    history.push({
+      pathname: "/login",
+    });
+  };
 
   return (
     <>
-   <button className='signout-btn' onClick={returnToLoginPage}>Sign Out</button>
-
       <div onClick={animationNav} className="wrapper_hamburger">
         <Hamburger
           rounded
@@ -45,14 +41,19 @@ let history = useHistory()
         />
       </div>
 
-      <a  href={href}>
+      <a href={href}>
         <nav ref={menu} className="header_nav">
-          {title} 
+          {title}
+
           <img src={image} alt="team worker icons" />
+
+          <button className="signout-btn" onClick={returnToLoginPage}>
+            Sign Out
+          </button>
         </nav>
       </a>
     </>
   );
 };
 
-export default Header;
+export default Navigation;

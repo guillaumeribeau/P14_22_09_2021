@@ -12,7 +12,7 @@ const customStyles = {
     backgroundColor: "#F2BA52",
     width: "200px",
     height: "45px",
-    color:"white",
+    color: "white",
   }),
 };
 
