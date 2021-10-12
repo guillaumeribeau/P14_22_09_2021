@@ -16,7 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### For run application you need to have a login:
 
-![Login](assets/images/login.png)
+![Login](./src/assets/images/login.png)
 
 For Examples we have one Admin with login, you can find just below
 
