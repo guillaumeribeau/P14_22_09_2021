@@ -25,8 +25,5 @@ Username | Password
 admin@hrnet.com | admin72
 
 
-## We can access demo live directly here:
-
-https://argent-bank-p14-openclassrooms.web.app/login
 
 
