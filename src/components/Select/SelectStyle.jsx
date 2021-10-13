@@ -1,3 +1,5 @@
+// custom select style react-select option
+
 const customStyles = {
   option: (provided, state) => ({
     ...provided,

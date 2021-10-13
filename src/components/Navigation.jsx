@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { gsap } from "gsap";
 import Hamburger from "hamburger-react";
 import firebase from "firebase";
