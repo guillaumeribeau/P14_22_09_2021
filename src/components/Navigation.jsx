@@ -41,17 +41,17 @@ const Navigation = ({ title, image, href }) => {
         />
       </div>
 
-      <a href={href}>
-        <nav ref={menu} className="header_nav">
-          {title}
+      <nav ref={menu} className="header_nav">
+        {title}
 
+        <a href={href}>
           <img src={image} alt="team worker icons" />
+        </a>
 
-          <button className="signout-btn" onClick={returnToLoginPage}>
-            Sign Out
-          </button>
-        </nav>
-      </a>
+        <button className="signout-btn" onClick={returnToLoginPage}>
+          Sign Out
+        </button>
+      </nav>
     </>
   );
 };
