@@ -30,6 +30,7 @@ const FormsEmployee = () => {
     control,
   } = useForm();
 
+  // Use for create a new employee in DB
   const createEmployee = (inputData) => {
     const employeeDB = firebase.database().ref("create-employee");
 
@@ -50,7 +51,7 @@ const FormsEmployee = () => {
   const onSubmit = (data) => {
     console.log(data);
     createEmployee(data);
-    setActive(true); // modale s'affiche
+    setActive(true); // modal display
   };
 
   // animation forms

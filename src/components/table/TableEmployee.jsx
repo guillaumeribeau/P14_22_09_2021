@@ -16,7 +16,6 @@ const TableEmployee = () => {
       }
 
       setData(list);
-      
     });
   }, []);
 

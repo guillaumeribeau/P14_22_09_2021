@@ -1,5 +1,3 @@
-
-
 export const customContent = {
   background: "#F2BA52",
   color: "#FCFCFC",
