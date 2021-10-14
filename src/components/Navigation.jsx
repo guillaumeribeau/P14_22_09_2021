@@ -1,23 +1,11 @@
-import React, { useRef, useState } from "react";
-import { gsap } from "gsap";
+import React, { useState } from "react";
 import Hamburger from "hamburger-react";
 import firebase from "firebase";
 import { useHistory } from "react-router-dom";
 
 const Navigation = ({ title, image, href }) => {
-  const menu = useRef(null);
-
-  const animationNav = () => {
-    if (!isOpen) {
-      gsap.to(menu.current, { opacity: 1, duration: 1.2, x: -245 });
-    }
-
-    if (isOpen) {
-      gsap.to(menu.current, { opacity: 0, duration: 1.2, x: 200 });
-    }
-  };
-
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState("close");
+  const [hamburger, setHamburger] = useState(false);
 
   let history = useHistory();
   const returnToLoginPage = () => {
@@ -29,19 +17,22 @@ const Navigation = ({ title, image, href }) => {
 
   return (
     <>
-      <div onClick={animationNav} className="wrapper_hamburger">
+      <div
+        onClick={() => setOpen(isOpen === "close" ? "open" : "close")}
+        className="wrapper_hamburger"
+      >
         <Hamburger
           rounded
           color="#FCFCFC"
           duration={0.7}
           direction="right"
           size={40}
-          toggled={isOpen}
-          toggle={setOpen}
+          toggled={hamburger}
+          toggle={() => setHamburger(!hamburger)}
         />
       </div>
 
-      <nav ref={menu} className="header_nav">
+      <nav className={`header_nav ${isOpen}`}>
         {title}
 
         <a href={href}>
