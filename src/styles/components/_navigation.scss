@@ -21,13 +21,12 @@ a {
   height: 200px;
   background-color: $white-color;
   border-radius: 30px;
-  right: -220px;
   top: 85px;
   font-size: 18px;
   padding-left: 10px;
   box-shadow: $box-shadow;
-  opacity: 0;
   z-index: 9999;
+  transition: all 1s ease-in-out;
 
   img {
     width: 60px;
@@ -36,6 +35,16 @@ a {
       transform: scale(1.3);
     }
   }
+}
+
+.close {
+  right: -220px;
+  opacity: 0;
+}
+
+.open {
+  right: 20px;
+  opacity: 1;
 }
 
 .wrapper_hamburger {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { Modal } from "gr-react-modal";
@@ -9,9 +9,7 @@ import department from "../data/Department";
 import Select from "react-select";
 import customStyles from "./Select/SelectStyle";
 import firebase from "../utils/firebaseConfig";
-import gsap from "gsap";
 import employee from "../assets/images/employee.png";
-import document from "../assets/images/document.png";
 import { customButton, customContent } from "./modale/CustomModal";
 
 const FormsEmployee = () => {
@@ -54,48 +52,12 @@ const FormsEmployee = () => {
     setActive(true); // modal display
   };
 
-  // animation forms
-  const leftforms = useRef(null);
-  const rightforms = useRef(null);
-  const button = useRef(null);
-  const documentImg = useRef(null);
-
-  useEffect(() => {
-    gsap.from(leftforms.current, {
-      x: "-250%",
-      delay: 1,
-      duration: 1,
-    });
-
-    gsap.from(rightforms.current, {
-      x: "250%",
-      delay: 1,
-      duration: 1,
-    });
-    gsap.from(button.current, {
-      y: "-250%",
-      delay: 1,
-      duration: 1,
-    });
-    gsap.to(documentImg.current, {
-      delay: 3,
-      y: "500px",
-      duration: 3,
-    });
-    gsap.to(documentImg.current, {
-      delay: 6,
-      x: "-520px",
-      duration: 3,
-      opacity: 0,
-    });
-  }, []);
-
   return (
     <>
       <div class="container">
         <form onSubmit={handleSubmit(onSubmit)} action="#" id="create-employee">
           <div className="container_form">
-            <div ref={leftforms} className="left_form_container">
+            <div className="left_form_container">
               <label for="firstName">First Name</label>
               <input
                 {...register("firstName", { required: true })}
@@ -171,7 +133,7 @@ const FormsEmployee = () => {
               <img src={employee} alt="employee" />
             </div>
 
-            <div className="right_form_container" ref={rightforms}>
+            <div className="right_form_container">
               <fieldset class="address">
                 <legend>Address</legend>
 
@@ -254,16 +216,8 @@ const FormsEmployee = () => {
                 )}
               />
             </div>
-            <img
-              className="document_icons"
-              ref={documentImg}
-              src={document}
-              alt="document icons"
-            />
           </div>
-          <button className="save_employee_btn" ref={button}>
-            Save Employee
-          </button>
+          <button className="save_employee_btn">Save Employee</button>
         </form>
 
         <Modal
